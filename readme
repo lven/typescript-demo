@@ -1,0 +1,58 @@
+typeScript
+
+1.准备工作.
+安装 typeScript
+npm install -g typescript
+编译:
+tsc greeter.ts
+2.webpack构建工具
+------------------------------------------------------------------------------------------
+报错1:
+使用Typescript开发，一切准备就绪。但npm start 时，提示“
+ERROR in ./src/main.ts
+Module build failed: TypeError: Cannot read property 'afterCompile' of undefined“错误。
+
+解决方法
+将ts-loader从4.0降低到3.1.1解决问题。是由于webpack和ts-loader版本不兼容造成的。
+
+报错2:
+E:\front-end\typescript-pp\webpack.config.js:3
+    entry: './main.js',
+    ^^^^^
+
+SyntaxError: Unexpected identifier
+
+解决途径:
+检查webpack.config.js ,语法错误.
+
+------------------------------------------------------------------------------------------
+安装依赖:
+webpack-dev-server html-webpack-plugin --save-dev
+
+npm install webpack-dev-server html-webpack-plugin --save-dev
+
+依赖如下:
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+
+ 3.语法
+  类型注解
+  约束函数的传参类型.
+
+  接口:
+  不implement也行,只需保证内部结构兼容就行.
+
+
+  类:
+  可以有构造函数和公共字段.
+  当构造函数上使用了public 的参数,则该类创建了同名的成员变量.
+
+
+  4.上传到github
+
